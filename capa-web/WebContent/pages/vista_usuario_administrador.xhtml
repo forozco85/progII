@@ -1,0 +1,36 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="/templates/template.xhtml">
+
+	<ui:define name="tituloFuncionalidad">Vista de usuario</ui:define>
+
+	<ui:define name="body">
+
+		<p:growl id="msgs" showDetail="true" />
+		<h:form id="form" prependId="false">
+			<p:panelGrid columns="1" styleClass="gridSinBordes">
+				<f:facet name="header">
+					<h:outputText value="Bienvenido(a) " />
+				</f:facet>
+			</p:panelGrid>
+			<p:spacer></p:spacer>
+			<h:panelGrid columns="1">
+				<h:outputText value="#{messages['msj_vistausuario']}" />
+				<h:panelGrid columns="3">
+
+					<p:commandButton value="#{messages['btn_crearUsuarioEmpresa']}"
+						actionListener="#{vistaUsuarioBean.crearEmpresa}" />
+					<p:commandButton value="#{messages['btn_crearUsuarioCiudadano']}"
+						actionListener="#{vistaUsuarioBean.crearPersona}" />
+					<p:commandButton value="#{messages['btn_crearOferta']}"
+						actionListener="#{vistaUsuarioBean.crearOferta}" />
+				</h:panelGrid>
+			</h:panelGrid>
+
+		</h:form>
+	</ui:define>
+</ui:composition>
