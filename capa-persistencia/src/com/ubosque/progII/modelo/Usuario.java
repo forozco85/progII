@@ -28,7 +28,8 @@ public class Usuario implements Serializable {
 
 	@Column(name="EMPRESA_ID")
 	private Long empresaId;
-
+	
+	@Column(name="NOMBREUSUARIO")
 	private String nombreusuario;
 
 	@Column(name="PERSONA_ID")

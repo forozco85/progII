@@ -35,6 +35,7 @@ public class UsuarioDTO implements Serializable{
 		contrasena = usuario.getContrasena();
 		empresaId = usuario.getEmpresaId();
 		personaId = usuario.getPersonaId();
+		usuariorol = usuario.getUsuariorol();
 	}
 	/**
 	 * @return the usuarioId

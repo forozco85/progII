@@ -10,8 +10,6 @@ import javax.faces.context.FacesContext;
 import com.ubosque.progII.dto.UsuarioDTO;
 import com.ubosque.progII.util.web.FacesUtils;
 
-
-
 @ManagedBean(name = VistaUsuarioBean.NOMBREBEAN)
 @SessionScoped
 public class VistaUsuarioBean {
@@ -23,10 +21,8 @@ public class VistaUsuarioBean {
 	@PostConstruct
 	public void init() {
 		usuarioDTO = (UsuarioDTO) FacesUtils.getSessionAttribute(UsuarioDTO.NOMBRE_ATRIBUTO);
-		//nombreFuncionario = usuarioDTO.getUsuario();
+		// nombreFuncionario = usuarioDTO.getUsuario();
 	}
-
-	
 
 	public void cerrarSesion() {
 		try {
@@ -40,10 +36,35 @@ public class VistaUsuarioBean {
 	public void redirigirConsultarProceso() {
 		try {
 			// System.out.println("autenticacion exitosa");
-			// FacesUtils.setSessionAttribute(UsuarioDTO.NOMBRE_ATRIBUTO, usuarioDTO);
+			// FacesUtils.setSessionAttribute(UsuarioDTO.NOMBRE_ATRIBUTO,
+			// usuarioDTO);
 			FacesContext context = FacesContext.getCurrentInstance();
 			// context.getExternalContext().getSessionMap().remove(VistaUsuarioBean.NOMBREBEAN);
-			//FacesUtils.sendRedirect("/pages/consulta_proceso.jsf");
+			// FacesUtils.sendRedirect("/pages/consulta_proceso.jsf");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void crearEmpresa() {
+		try {
+			FacesUtils.sendRedirect("/pages/formulario_empresa.jsf");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void crearPersona() {
+		try {
+			FacesUtils.sendRedirect("/pages/formulario_persona.jsf");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void crearOferta() {
+		try {
+			FacesUtils.sendRedirect("/pages/formulario_oferta.jsf");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
