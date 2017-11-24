@@ -9,8 +9,35 @@
 	<ui:define name="tituloFuncionalidad">Crear empresa</ui:define>
 
 	<ui:define name="body">
-
-
-
+		<h:panelGrid columns="1" style="padding-left: 20%"
+			styleClass="gridSinBordes">
+			<h:form id="baseForm" prependId="true">
+				<h:panelGrid columns="2" style="padding-left: 20%"
+					styleClass="gridSinBordes">
+					<h:outputLabel for="inNombreEmpresa" value="Nombre empresa"/>
+					<p:inputText id="inNombreEmpresa" value="#{formularioEmpresaBean.nombreEmpresa}"/>
+					
+					<h:outputLabel for="inNombreUsuaEmpresa" value="Nombre usuario empresa"/>
+					<p:inputText id="inNombreUsuaEmpresa" value="#{formularioEmpresaBean.nombreuUsuarioEmpresa}"/>
+					
+					<h:outputLabel for="inContrasenaUsuaEmpresa" value="Contrasena usuario empresa"/>
+					<p:inputText id="inContrasenaUsuaEmpresa" value="#{formularioEmpresaBean.contrasenaUsuarioEmpresa}"/>
+					
+					<h:outputLabel for="inPerfilEmpresa" value="Perfil empresa"/>
+					<p:inputText id="inPerfilEmpresa" value="#{formularioEmpresaBean.perfil}"/>
+					
+					<h:outputLabel for="inSectorEmpresa" value="Sector empresa"/>
+					<p:inputText id="inSectorEmpresa" value="#{formularioEmpresaBean.sector}"/>
+					
+					<h:outputLabel for="inTelEmpresa" value="Telefono empresa"/>
+					<p:inputText id="inTelEmpresa" value="#{formularioEmpresaBean.telefono}"/>
+					
+					<h:outputLabel for="inEmailEmpresa" value="Correo empresa"/>
+					<p:inputText id="inEmailEmpresa" value="#{formularioEmpresaBean.correo}"/>
+					
+					<p:commandButton value="Guardar" actionListener="#{formularioEmpresaBean.guardarEmpresa}"/>
+				</h:panelGrid>
+			</h:form>
+		</h:panelGrid>
 	</ui:define>
 </ui:composition>
