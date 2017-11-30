@@ -18,7 +18,7 @@
 					<p:inputText id="inNombreEmpresa" value="#{formularioEmpresaBean.nombreEmpresa}"/>
 					
 					<h:outputLabel for="inNombreUsuaEmpresa" value="Nombre usuario empresa"/>
-					<p:inputText id="inNombreUsuaEmpresa" value="#{formularioEmpresaBean.nombreuUsuarioEmpresa}"/>
+					<p:inputText id="inNombreUsuaEmpresa" value="#{formularioEmpresaBean.nombreUsuarioEmpresa}"/>
 					
 					<h:outputLabel for="inContrasenaUsuaEmpresa" value="Contrasena usuario empresa"/>
 					<p:inputText id="inContrasenaUsuaEmpresa" value="#{formularioEmpresaBean.contrasenaUsuarioEmpresa}"/>
@@ -36,6 +36,7 @@
 					<p:inputText id="inEmailEmpresa" value="#{formularioEmpresaBean.correo}"/>
 					
 					<p:commandButton value="Guardar" actionListener="#{formularioEmpresaBean.guardarEmpresa}"/>
+					<p:commandButton value="Volver" actionListener="#{formularioEmpresaBean.volver}"/>
 				</h:panelGrid>
 			</h:form>
 		</h:panelGrid>

@@ -7,8 +7,9 @@ import javax.faces.bean.SessionScoped;
 
 import com.ubosque.progII.dto.EmpresaDTO;
 import com.ubosque.progII.fachada.GestionFachadaLocal;
+import com.ubosque.progII.util.web.FacesUtils;
 
-@ManagedBean(name = VistaUsuarioBean.NOMBREBEAN)
+@ManagedBean(name = FormularioEmpresaBean.NOMBREBEAN)
 @SessionScoped
 public class FormularioEmpresaBean {
 	
@@ -42,6 +43,14 @@ public class FormularioEmpresaBean {
 		empresaDTO.setTelefono(telefono);
 		try {
 			gestionFachada.guardarEmpresa(empresaDTO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void volver(){
+		try {
+			FacesUtils.sendRedirect("/pages/autenticacion.jsf");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

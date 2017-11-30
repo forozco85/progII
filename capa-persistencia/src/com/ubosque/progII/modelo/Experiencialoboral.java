@@ -1,11 +1,14 @@
 package com.ubosque.progII.modelo;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.eclipse.persistence.annotations.ReturnInsert;
 
@@ -28,9 +31,11 @@ public class Experiencialoboral implements Serializable {
 
 	private String empresa;
 
-	private String fechafinal;
-
-	private String fechainicial;
+	@Temporal(TemporalType.DATE)
+	private Date fechafinal;
+	
+	@Temporal(TemporalType.DATE)
+	private Date fechainicial;
 
 	private String funciones;
 
@@ -66,19 +71,19 @@ public class Experiencialoboral implements Serializable {
 		this.empresa = empresa;
 	}
 
-	public String getFechafinal() {
+	public Date getFechafinal() {
 		return this.fechafinal;
 	}
 
-	public void setFechafinal(String fechafinal) {
+	public void setFechafinal(Date fechafinal) {
 		this.fechafinal = fechafinal;
 	}
 
-	public String getFechainicial() {
+	public Date getFechainicial() {
 		return this.fechainicial;
 	}
 
-	public void setFechainicial(String fechainicial) {
+	public void setFechainicial(Date fechainicial) {
 		this.fechainicial = fechainicial;
 	}
 

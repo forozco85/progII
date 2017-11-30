@@ -9,7 +9,150 @@
 	<ui:define name="tituloFuncionalidad">Crear persona</ui:define>
 
 	<ui:define name="body">
+		<h:form id="baseForm" prependId="true">
+			<p:fieldset legend="Informacion Personal">
+				<h:panelGrid columns="2" style="padding-left: 20%"
+					styleClass="gridSinBordes">
+					<h:outputLabel for="ip1" value="Nombre persona" />
+					<p:inputText id="ip1"
+						value="#{formularioPersonaBean.nombrePersona}" />
 
+					<h:outputLabel for="ip2" value="Apellido persona" />
+					<p:inputText id="ip2"
+						value="#{formularioPersonaBean.apellidoPersona}" />
+
+					<h:outputLabel for="ip3" value="Fecha nacimiento" />
+					<p:calendar id="ip3"
+						value="#{formularioPersonaBean.fechaNacimiento}" />
+
+					<h:outputLabel for="ip4" value="ALugar Nacimiento" />
+					<p:inputText id="ip4"
+						value="#{formularioPersonaBean.lugarNacimiento}" />
+
+					<h:outputLabel for="ip5" value="Direccion" />
+					<p:inputText id="ip5" value="#{formularioPersonaBean.direccion}" />
+
+					<h:outputLabel for="ip7" value="Telefono" />
+					<p:inputText id="ip7" value="#{formularioPersonaBean.telefono}" />
+
+					<h:outputLabel for="ip6" value="Estado civil" />
+					<p:selectOneMenu id="ip6"
+						value="#{formularioPersonaBean.estadoCivil}">
+						<f:selectItem itemLabel="Soltero" itemValue="Soltero" />
+						<f:selectItem itemLabel="Casado" itemValue="Casado" />
+						<f:selectItem itemLabel="Divorciado" itemValue="Divorciado" />
+					</p:selectOneMenu>
+
+					<h:outputLabel for="ip8" value="Correo electronioc" />
+					<p:inputText id="ip8" value="#{formularioPersonaBean.correo}" />
+				</h:panelGrid>
+			</p:fieldset>
+			<p:fieldset legend="Informacion perfil profesional">
+				<h:panelGrid columns="2" style="padding-left: 20%"
+					styleClass="gridSinBordes">
+					<h:outputLabel for="ipp1" value="Descripcion" />
+					<p:inputTextarea id="ipp1"
+						value="#{formularioPersonaBean.perfilProfesional}" />
+				</h:panelGrid>
+			</p:fieldset>
+			<p:fieldset legend="Informacion academica">
+				<h:panelGrid columns="2" style="padding-left: 20%"
+					styleClass="gridSinBordes">
+					<h:outputLabel for="ia2" value="Fecha inicial" />
+					<p:calendar id="ia2" value="#{formularioPersonaBean.fechaInicial}" />
+
+					<h:outputLabel for="ia3" value="Fecha final" />
+					<p:calendar id="ia3" value="#{formularioPersonaBean.fechaFinal}" />
+
+					<h:outputLabel for="ia4" value="Universidad" />
+					<p:inputText id="ia4" value="#{formularioPersonaBean.universidad}" />
+
+					<h:outputLabel for="ia5" value="Titulo" />
+					<p:inputText id="ia5" value="#{formularioPersonaBean.titulo}" />
+
+					<h:outputLabel for="ia6" value="Nivel de estudio" />
+					<p:selectOneMenu id="ia6"
+						value="#{formularioPersonaBean.nivelEstudio}">
+						<f:selectItem itemLabel="Pregrado" itemValue="Pregrado" />
+						<f:selectItem itemLabel="Tecnico" itemValue="Tecnico" />
+						<f:selectItem itemLabel="Especializacion"
+							itemValue="Especializacion" />
+						<f:selectItem itemLabel="Maestria" itemValue="Maestria" />
+					</p:selectOneMenu>
+				</h:panelGrid>
+			</p:fieldset>
+			<p:fieldset legend="Referencia">
+				<h:panelGrid columns="2" style="padding-left: 20%"
+					styleClass="gridSinBordes">
+
+					<h:outputLabel for="r6" value="Tipo referencia" />
+					<p:selectOneMenu id="r6"
+						value="#{formularioPersonaBean.tipoReferencia}">
+						<f:selectItem itemLabel="Laboral" itemValue="Laboral" />
+						<f:selectItem itemLabel="Familiar" itemValue="Familiar" />
+						<f:selectItem itemLabel="Personal" itemValue="Personal" />
+					</p:selectOneMenu>
+
+					<h:outputLabel for="r7" value="Nombre" />
+					<p:inputText id="r7"
+						value="#{formularioPersonaBean.nombreReferencia}" />
+
+					<h:outputLabel for="r8" value="Relacion o cargo" />
+					<p:inputText id="r8"
+						value="#{formularioPersonaBean.relacionReferencia}" />
+
+					<h:outputLabel for="r9" value="Telefono" />
+					<p:inputText id="r9"
+						value="#{formularioPersonaBean.telefonoReferencia}" />
+
+					<h:outputLabel for="r10" value="Direccion" />
+					<p:inputText id="r10"
+						value="#{formularioPersonaBean.direccionReferencia}" />
+
+				</h:panelGrid>
+			</p:fieldset>
+			<p:fieldset legend="Experiencia laboral">
+				<h:panelGrid columns="2" style="padding-left: 20%"
+					styleClass="gridSinBordes">
+					<h:outputLabel for="el1" value="Fecha inicial" />
+					<p:calendar id="el1"
+						value="#{formularioPersonaBean.fechaInicialExl}" />
+
+					<h:outputLabel for="el2" value="Fecha final" />
+					<p:calendar id="el2" value="#{formularioPersonaBean.fechaFinalExl}" />
+
+					<h:outputLabel for="el3" value="Cargo" />
+					<p:inputText id="el3" value="#{formularioPersonaBean.cargoExl}" />
+
+					<h:outputLabel for="el4" value="Empresa" />
+					<p:inputText id="el4" value="#{formularioPersonaBean.empresaExl}" />
+
+					<h:outputLabel for="el5" value="Funciones" />
+					<p:inputText id="el5" value="#{formularioPersonaBean.funcionesExl}" />
+
+
+				</h:panelGrid>
+			</p:fieldset>
+
+			<p:fieldset legend="Informacion Usuario">
+				<h:panelGrid columns="2" style="padding-left: 20%"
+					styleClass="gridSinBordes">
+					<h:outputLabel for="iu5" value="Nombre Usuario" />
+					<p:inputText id="iu5" value="#{formularioPersonaBean.nombreUsuario}" />
+					
+					<h:outputLabel for="iu6" value="Contrasena" />
+					<p:inputText id="iu6" value="#{formularioPersonaBean.contrasena}" />
+				</h:panelGrid>
+			</p:fieldset>
+
+			<h:panelGrid columns="2" style="padding-left: 20%"
+				styleClass="gridSinBordes">
+				<p:commandButton value="Guardar"
+					actionListener="#{formularioPersonaBean.guardarPersona}" />
+				<p:commandButton value="Volver"
+					actionListener="#{formularioPersonaBean.volver}" />
+			</h:panelGrid>
+		</h:form>
 
 
 	</ui:define>

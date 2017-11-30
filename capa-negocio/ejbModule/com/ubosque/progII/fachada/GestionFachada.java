@@ -3,10 +3,13 @@ package com.ubosque.progII.fachada;
 import javax.annotation.PostConstruct;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import com.ubosque.progII.dto.EmpresaDTO;
+import com.ubosque.progII.dto.PersonaDTO;
 import com.ubosque.progII.servicio.GestionServicio;
 
 /**
@@ -35,9 +38,19 @@ public class GestionFachada implements GestionFachadaLocal {
         // TODO Auto-generated constructor stub
     }
 
-	@Override
+    @Override
+	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 	public void guardarEmpresa(EmpresaDTO empresaDTO) throws Exception {
 		gestionServicio.guardarEmpresa(empresaDTO);
+		
+	}
+
+
+
+    @Override
+	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
+	public void guardarPersona(PersonaDTO persona) throws Exception {
+		gestionServicio.guardarPersona(persona);
 		
 	}
 
